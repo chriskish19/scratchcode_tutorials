@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build a website</title>
+     <!-- Load style sheets-->
+
+    <!-- Load coding style sheet-->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Load syntax highlighting style sheet-->
+    <link rel="stylesheet" href="../../highlight/styles/vs2015.min.css">
+
+    <!-- Load main style sheet -->
+    <!-- it has the nav header style we need-->
+    <link rel="stylesheet" href="../../styles/main_style.css">
+
+    <!-- Load the new logo -->
+    <link rel="icon" href="../../images/new_logo.png" type="image/png">
+</head>
+
+<body id="main_body">
+<header>
+    <h1 id="main_title">How to build a Website</h1>
+</header>
+
+<!-- Main navigation panel -->
+<nav>
+    <a href="../../main.html">Home</a>
+    <button id="tutorial_menu_button">Tutorials</button>
+    <div id="tutorial_menu" class="dropdown_content">
+        <a href="BuildWebsite.html">How to build a website</a>
+        <a href="../coding/coding.html">Coding basics</a>
+        <a href="#">Win32 API</a>
+        <a href="#">DirectX12 API</a>
+        <a href="#">Make a game with SDL</a>
+        <!-- Add more links as needed -->
+    </div>
+    <a href="../../pages/about/about.html">About</a>
+    <a href="../../pages/contact/contact.html">Contact</a>
+</nav>
+
+<!-- Side bar navigation -->
+<button id="arrow_button" title="click me for quick navigation" class="hovering-arrow">
+    <img src="images/arrow.png" alt="arrow" class="small-button-image">
+</button>
+
+<div id="side-bar-menu" class="side-bar-content">
+    <a href="#main_body">Top of page</a>
+    <a href="#intro">Intro</a>
+    <a href="#p1">Getting Started</a>
+    <a href="#p2">First Webpage</a>
+    <a href="#p3">CSS Intro</a>
+    <a href="#p4">Javascript Intro</a>  
+    <!-- Add more links here -->
+</div>
+
+
+
+<!-- Intro section -->
+<h2 id="intro">Intro</h2>
+<p>This tutorial will show you how to make websites from scratch. It is very basic nothing fancy here. We start with html and progress towards CSS and JavaScript learning only what we use. Were going to use only code to build the website. Happy coding.</p>
+
+<p><i>What is html?</i>
+Html stands for hypertext markup language. Its the language that tells the web browser how to layout a website. Like where to place text or images.</p>
+
+<p><i>What is CSS?</i>
+CSS stands for cascade style sheets. It provides a way to paint a website to any color, size or shape. It's not really a language but more a giant collection of settings we can use to change the look and feel of a website.</p>
+
+<p><i>What is JavaScript?</i>
+JavaScript is a programming language that is used to add functionality to a website and make it interactive. It adds functionality to buttons, mouse movements, mouse clicks and much more.</p> 
+
+<!-- Getting started section -->
+<h2 id="p1">Part 1: Getting Started</h2>
+<p>To start you'll need a IDE or a text editor. I prefer to use vs code. Heres a link to download it <a href="https://code.visualstudio.com/download" target="_blank">here.</a>
+Or use your prefered text editor. This tutorial uses vs code. Lets start by creating a new file and calling it "main.html". Were going to start with the code explaining and examining it piece by piece, similar to putting together a lego set. This first piece of code tells html what type of document this is. Add this to the main file you just created, type at the top:</p>
+<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+
+
+<p>Next piece of code is a comment. Comments are ignored by html and they serve a purpose for the programmer. The purpose is to explain code and keep it organized.</p>
+<pre><code>&lt;!-- This is a comment --&gt;</code></pre>
+
+
+<p>Next piece of code is called a tag. Tags serve the purpose of marking out the begining and ending of the html code. They also do other things like set properties. The html tag is the main tag and all other tags are enclosed within it. The <i>lang="en"</i> tells the browser what language to use in our case <i>"en"</i> stands for english.</p>
+<pre><code>&lt;html lang="en"&gt;</code></pre>
+
+
+<p>Next piece of code is a head tag. It holds the settings for the webpage.</p>
+<pre><code>&lt;head&gt;</code></pre>
+
+
+<p>This tag is called meta data. This tells html what character set we are using. UTF-8 is the character set, it is useful for translating the webpage into other languages.</p>
+<pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+
+
+<p>This tells html how to view the webpage on different devices. Like on a phone, tablet or a pc. The <i>width=device-width</i> says set the width of the page to the width of the device screen. The <i>initial-scale=1.0</i> tells html to set the zoom level when the page is first loaded to 1.</p>
+<pre><code>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;</code></pre>
+
+
+<p>This code tells the browser to render the page in the latest standard. Its specific to internet explorer.</p>
+<pre><code>&lt;meta http-equiv="X-UA-Compatible" content="ie-edge"&gt;</code></pre>
+
+
+<p>This code sets the title for the webpage</p>
+<pre><code>&lt;title&gt;My webpage&lt;/title&gt;</code></pre>
+
+
+<p>This code is a closing tag for head</p>
+<pre><code>&lt;/head&gt;</code></pre>
+
+
+<p>Now the body tag, this is where we put most of our code</p>
+<pre><code>&lt;body&gt;</code></pre>
+
+
+<p>Then the closing body tag</p>
+<pre><code>&lt;/body&gt;</code></pre>
+
+
+<p>Then the closing html tag</p>
+<pre><code>&lt;/html&gt;</code></pre>
+
+
+<p>Now for the complete boiler plate html code. This code is what each html file must have in order to function correctly.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!-- This is a comment --&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;My webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+<!-- First webpage section -->
+<h2 id="p2">Part 2: First Webpage</h2>
+<p>Now find the file main.html you made and open it with your web browser. It should show a blank page with nothing on it. At the top notice the title of the tab it says <i>My webpage</i> which is what we set in the title tags. Lets add some text to our web page. Between the body tags add this code.</p>
+<pre><code>&lt;h1&gt;First Webpage&lt;/h1&gt;</code></pre>
+
+
+<p>Save changes to main.html and open it with your web browser. Remember each time you make changes to main.html you must save it (<i>vs code</i> Click->File->Save or Press: CTRL+S) and refresh the web browser (<i>FireFox</i> Press: CTRL+R). <i>h1</i> is called a heading and 1 is the highest level. Its used for the Main heading on a website. Next add this code.</p>
+<pre><code>&lt;h2&gt;First Webpage&lt;/h2&gt;
+&lt;h3&gt;First Webpage&lt;/h3&gt;
+&lt;h4&gt;First Webpage&lt;/h4&gt;
+&lt;h5&gt;First Webpage&lt;/h5&gt;
+&lt;h6&gt;First Webpage&lt;/h6&gt;
+</code></pre>
+
+
+<p>The p tag is short for paragraph. It's the same tag I'm using to write this sentence. Add this code.</p>
+<pre><code>&lt;p&gt;First Webpage&lt;p&gt;</code></pre>
+
+
+<p>The next tag I want to cover is a button. Add this code.</p>
+<pre><code>&lt;button&gt;MyButton&lt;/button&gt;</code></pre>
+
+
+<p>Here is all the code so far.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!-- This is a comment --&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;My webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;First Webpage&lt;/h1&gt;
+    &lt;h2&gt;First Webpage&lt;/h2&gt;
+    &lt;h3&gt;First Webpage&lt;/h3&gt;
+    &lt;h4&gt;First Webpage&lt;/h4&gt;
+    &lt;h5&gt;First Webpage&lt;/h5&gt;
+    &lt;h6&gt;First Webpage&lt;/h6&gt;
+    &lt;p&gt;First Webpage&lt;p&gt;
+    &lt;button&gt;MyButton&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+<p>This is what should be displayed in your browser. If it's not showing the same as below it means there's an error in your code. Double check that your code is exactly the same as above.</p>				
+<h1>First Webpage</h1>
+<h2>First Webpage</h2>
+<h3>First Webpage</h3>
+<h4>First Webpage</h4>
+<h5>First Webpage</h5>
+<h6>First Webpage</h6>
+<p>First Webpage</p>
+<button>MyButton</button>
+
+
+<!-- CSS Intro section -->
+<h2 id="p3">Part 3: CSS Intro</h2>
+<p>Lets setup a folder structure for the website. Make four new folders called "styles","images","scripts", and "pages" in same directory as "main.html". It should look something like the image below:</p>
+<img src="images/folders.png" alt="folders structure">
+
+
+<p>In the "styles" folder make a new file called "main_style.css" and in the "scripts" folder make a new file called "main_script.js". Were going to add a header at the top of the page. We need to use a style sheet to accomplish this. Add this code to "main_style.css":</p>
+
+<pre><code>/* This is a comment in CSS */
+/* Main webpage style sheet */
+.header{
+    width:100%;
+    height:150px;
+    background-color: #ccc;
+    border:1px solid black;
+    padding:10px;
+    margin:20px auto;
+    box-sizing:border-box;
+    overflow:auto;
+}
+</code></pre>
+
+
+<p>In "main.html" we need to tell our page about the style sheet we just added and its location in the folder structure. Here's how we do that. Between the "head" tags add this code:</p>
+<pre><code>&lt;link rel="stylesheet" href="styles/main_style.css"&gt;</code></pre>
+
+
+<p>To add our header to our page we use what are called CSS classes. ".header" in "main_style.css" is a CSS class and the settings it holds can be applied to any html element on our page by specifying the "class" attribute in an html element. Change the "h1" tag to the code below.</p>
+<pre><code>&lt;h1 class="header"&gt;First Webpage&lt;/h1&gt;</code></pre>
+
+
+
+<p>Now double check your code in "main.html" so that it resembles the code below exactly.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!-- This is a comment --&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;My webpage&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles/main_style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 class="header"&gt;First Webpage&lt;/h1&gt;
+    &lt;h2&gt;First Webpage&lt;/h2&gt;
+    &lt;h3&gt;First Webpage&lt;/h3&gt;
+    &lt;h4&gt;First Webpage&lt;/h4&gt;
+    &lt;h5&gt;First Webpage&lt;/h5&gt;
+    &lt;h6&gt;First Webpage&lt;/h6&gt;
+    &lt;p&gt;First Webpage&lt;p&gt;
+    &lt;button&gt;MyButton&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+
+<p>Open "main.html" with your browser and if everything is done correctly you'll see whats below.</p>
+<h1 class="header">First Webpage</h1>
+<h2>First Webpage</h2>
+<h3>First Webpage</h3>
+<h4>First Webpage</h4>
+<h5>First Webpage</h5>
+<h6>First Webpage</h6>
+<p>First Webpage<p>
+<button>MyButton</button>
+
+
+<p>I'll explain the CSS code now line by line. <i>.header</i> is a css class. It could be any name you choose <i>.anyNameHere</i> then inside curley brackets <i>{ css settings here}</i>. There's many many CSS settings to choose from. So I use a reference to find the setting I want and an explanation. The reference I prefer to use is <a href="https://cssreference.io/" target="_blank">https://cssreference.io/</a>.</p>
+<pre><code>.header{
+/* Settings here */
+}</code></pre>
+
+
+<p>This sets the width to 100%. 100% means it fills the screen from one end to the other. It can also be set to pixels like so <i>100px</i> this means the width will be 100 pixels. I have it set to 100% because I want the header to be from one end of the window to the other end of the window even when the window is resized. Remember to add a semi colon to the end of each setting.</p>
+<pre><code>width:100%;</code></pre>
+
+
+<p>This sets the height to 150 pixels. It could be set to <i>%</i> or <i>vh</i> or <i>auto</i>. Try it out for yourself.</p>
+<pre><code>height:150px;</code></pre>
+
+
+<p>This sets the background color to a hex value. #ccc is light gray in hexadecimal.</p>
+<pre><code>background-color:#ccc;</code></pre>
+
+
+<p><i>border</i> is a property that wraps a border around an element. The <i>1px</i> means one pixel for the border-width. <i>solid</i> means the border line is continuous and <i>black</i> is the border-color.</p>
+<pre><code>border:1px solid black;</code></pre>
+
+
+<p><i>padding</i> adds space inside an html element. So in our example, the title <i>First WebPage</i> will get 10 pixels of extra space on all four sides from the border edge.</p>
+<pre><code>padding:10px;</code></pre>
+
+
+<p><i>margin</i> adds space outside an html element. So in our example, <i>First WebPage</i> at the very top and the second <i>First WebPage</i> just below it will have a 20 pixel space added in between. <i>20px</i> will add a 20 pixel space to the top and bottom and <i>auto</i> will handle the left and right by centering the element horizontally.</p>
+<pre><code>margin:20px auto;</code></pre>
+
+
+<p><i>box-sizing</i> is a property that specifies whether to include the border and padding in the width and height of the element. In our example we set it to <i>border-box</i>, that means the padding and border will be included in the total width and height. If we set it to <i>content-box</i> the total width and height will be larger since the padding and border are added to the total.</p>
+<pre><code>box-sizing:border-box;</code></pre>
+
+
+<p><i>overflow</i> decides how the content will be displayed when it becomes larger than its container. When the content overflows in our example a scroll bar will be displayed since the setting is <i>auto</i>.</p>
+<pre><code>overflow:auto;</code></pre>
+
+
+<p>If you find yourself wondering why didn't a setting change the way it's supposed to. In firefox right click anywhere on your webpage and select <i>Inspect(Q)</i> or <i>press f12</i> make sure the firefox window is in focus. Play around with it and get used to using it, its very useful. We will be using <i>Inspector</i> and <i>Style Editor</i> for now.</p> 
+<img src="images/inspector.png" alt="inspector">
+
+
+<!-- Part 4: Javascript -->
+<h2 id="p4">Part 4: Javascript Intro</h2>
+<p>This part of the tutorial assumes you have basic coding skill's already and are familar with coding in general. If not be sure to complete the tutorial <a href="../coding/coding.html" target="_blank">Coding Basics</a> before moving ahead.</p>
+
+
+<p>Let's begin by adding some functionality to our button. When its clicked it will change the h1 heading at the top of the page. Download the tutorial source code from my github page. <!-- Remember to add the link here --> It contains some needed javascript classes. From the source code find the folder called "classes" its in the folder called "scripts". Copy the "classes" folder to your website directory and place it in the folder called "scripts".</p>
+<!-- Might be hard to follow getting the source code and copying the classes, TODO: add a video or pictures maybe? -->
+<p>Add the code to load the script files. In "main.html" just before the "&lt;/html&gt;" ending tag.</p>
+<pre><code>&lt;!-- Load scripts here --&gt;
+
+&lt;!-- Load classes first --&gt;
+&lt;!-- Load Button class script for button functionality --&gt;
+&lt;script src="scripts/classes/button.js"&gt;&lt;/script&gt;
+
+&lt;!-- Load main script last --&gt;
+&lt;script src="scripts/main_script.js"&gt;&lt;/script&gt;
+</code></pre>
+
+
+<p>"main.html" should now look like the code below.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!-- This is a comment --&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;My webpage&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles/main_style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 class="header"&gt;First Webpage&lt;/h1&gt;
+    &lt;h2&gt;First Webpage&lt;/h2&gt;
+    &lt;h3&gt;First Webpage&lt;/h3&gt;
+    &lt;h4&gt;First Webpage&lt;/h4&gt;
+    &lt;h5&gt;First Webpage&lt;/h5&gt;
+    &lt;h6&gt;First Webpage&lt;/h6&gt;
+    &lt;p&gt;First Webpage&lt;p&gt;
+    &lt;button&gt;MyButton&lt;/button&gt;
+&lt;/body&gt;
+
+&lt;!-- Load scripts here --&gt;
+
+&lt;!-- Load classes first --&gt;
+&lt;!-- Load Button class script for button functionality --&gt;
+&lt;script src="scripts/classes/button.js"&gt;&lt;/script&gt;
+
+&lt;!-- Load main script last --&gt;
+&lt;script src="scripts/main_script.js"&gt;&lt;/script&gt;
+&lt;/html&gt;   
+</code></pre>
+
+
+<p>This line of code loads in a javascript file called "button.js". The location is relative to the current html document so from "main.html" the location would be scripts folder then classes folder and the file name "button.js". To move up a directory from "main.html" use "../". The "src" attribute gets the location from the string you pass in with quotation marks. We load the main script last because its dependant on the definition of the button class.</p> 
+<pre><code>&lt;script src="scripts/classes/button.js"&gt;&lt;/script&gt;</code></pre>
+
+
+<p>Open "main_script.js" with your IDE or Text editor and add the following code.</p>
+<pre><code>// make an instance of a button 
+const Mybutton = new button('b1');
+
+// get the title html element
+let title = document.getElementById('t1');
+
+function ButtonLogic(Event){
+    if(Mybutton.IsPressed()){
+        title.textContent = 'Hello World';
+    }
+}
+</code></pre>
+
+
+<p>In "main.html" lets add an "id" attribute to the html elements we want to work with. An "id" is a unique name for an html element that you decide to use. Call them "t1" and "b1".</p>
+<pre><code>&lt;h1 id="t1" class="header"&gt;First Webpage&lt;/h1&gt;
+&lt;button id="b1"&gt;MyButton&lt;/button&gt;    
+</code></pre>
+
+
+
+<p>Check "main.html" that its the same as below. If it is open "main.html" with your browser and click "MyButton".</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!-- This is a comment --&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;title&gt;My webpage&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles/main_style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="t1" class="header"&gt;First Webpage&lt;/h1&gt;
+    &lt;h2&gt;First Webpage&lt;/h2&gt;
+    &lt;h3&gt;First Webpage&lt;/h3&gt;
+    &lt;h4&gt;First Webpage&lt;/h4&gt;
+    &lt;h5&gt;First Webpage&lt;/h5&gt;
+    &lt;h6&gt;First Webpage&lt;/h6&gt;
+    &lt;p&gt;First Webpage&lt;p&gt;
+    &lt;button id="b1"&gt;MyButton&lt;/button&gt;
+&lt;/body&gt;
+
+&lt;!-- Load scripts here --&gt;
+
+&lt;!-- Load classes first --&gt;
+&lt;!-- Load Button class script for button functionality --&gt;
+&lt;script src="scripts/classes/button.js"&gt;&lt;/script&gt;
+
+&lt;!-- Load main script last --&gt;
+&lt;script src="scripts/main_script.js"&gt;&lt;/script&gt;
+&lt;/html&gt; 
+</code></pre>
+
+
+<p>When "MyButton" is clicked it changes the text in the header to "Hello World".</p>
+<h1 id="t1" class="header">First Webpage</h1>
+<h2>First Webpage</h2>
+<h3>First Webpage</h3>
+<h4>First Webpage</h4>
+<h5>First Webpage</h5>
+<h6>First Webpage</h6>
+<p>First Webpage<p>
+<button id="b1">MyButton</button>
+
+
+<p>I'll explain the button class found in "button.js". When an instance of the button class is made it calls the class constructor and passes the "id" into the constructor function. "id" is a string type and it holds the unique html element id. It is then passed into the function "document.getElementById(id)" this function returns the html element and stores a reference in "this._button". Then we check if "this._button" is null and if it is send a message to the console. An event listener is added to the button, when the button is clicked with the mouse "toCall()" is executed. And some class members are set.</p>
+<pre><code>class button{ // encapsulates all functionality of a button
+    // constructor is called when a new button is made
+    constructor(id)
+    {
+        // returns the html element that matches the id
+        this._button = document.getElementById(id);
+        
+        // sends a message to the console, remember when you press f12 in the browser and the debug window comes up
+        // thats where the message is sent to
+        if(this._button==null){console.log("error cant get element id");}
+        
+        // adds an event listener
+        // when this._button is clicked it will call the class function toCall()
+        this._button.addEventListener("click",this.toCall.bind(this));
+        
+        // class members
+        this.ID = id;
+        this._pressed = false;
+        this.PressCount =0;
+    }
+    // rest of the class functions
+}
+</code></pre>
+
+
+<p>In order to add an event listener to a class member function you must pass in "this.toCall.bind(this)". "this" in javascript depends on how the method is called, for instance if it is called from an event handler "this" would refer to the element the event was acted upon-in this case, "this._button". That is why ".bind(this)" is used, it creates a new function with the same body and scope as this.toCall, but with "this" permanently bound to the value provided, which is an instance of the class. This ensures that inside "this.toCall", "this" refers to the class instance, not the DOM element. It allows you to safely use "this" within "toCall" to refer to class properties and methods.</p>
+
+<p>The rest of the class is pretty self explanitory. Just some basic functions.</p>
+<pre><code>class button{
+    // constructor as before
+    
+    // call to release the button
+    Release(){
+        this._pressed = false; 
+        this.ResetPressCount();
+    }
+    
+    // called when a button is clicked
+    Press(){
+        this._pressed = true; 
+        this.PressCount++;
+    }
+    
+    // useful for checking if the button was pressed
+    IsPressed() {
+        return this._pressed;
+    }
+    
+    // function that is called when a button is clicked
+    toCall(Event){
+        this.Press(); 
+        ButtonLogic(Event);
+    }
+    
+    // PressCount reset
+    ResetPressCount(){
+        this.PressCount=0;
+    }
+    
+    // change the title of the button
+    ChangeButtonText(_text){
+        this._button.innerHTML = _text;
+    }
+
+    // returns the html button element
+    GetButtonElem(){
+        return this._button;
+    }
+
+    // returns the string id
+    GetId(){
+        return this.ID;
+    }
+}
+</code></pre>
+
+
+<p>I will explain "main_script.js" with comments below. </p>
+<pre><code>// make an instance of a button 
+// const, since the button does not change
+// pass in "b1" the id of the html element
+const Mybutton = new button('b1');
+
+// get the title html element
+let title = document.getElementById('t1');
+
+// global function that toCall() in the button class calls
+function ButtonLogic(Event){
+    // check if the button is pressed, if it is change the title to "Hello World"
+    if(Mybutton.IsPressed()){
+        title.textContent = 'Hello World';
+
+        // oops forgot to mention a call to release the button
+        // this is important when there is more than one button on the page
+        // because all buttons have toCall() which calls the same ButtonLogic() function
+        MyButton.Release();
+    }
+}
+</code></pre>
+
+
+<h4>Task</h4>
+<p>With the new tools you've learned its time to put them to the test. Your task is to add the ability to resize the header with the mouse dynamically in the web browser. Hint: There is a class already built that handles this functionality its in the classes folder and its called "resize.js". Or if you're feeling extra brave add the functionality to resize the header from scratch using a class or method.</p>
+
+
+<p>To be Continued...</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>&copy; 2023 Scratchcode</p>
+</footer>
+
+<!-- End of main body -->
+</body>
+
+
+<!-- Load scripts -->
+
+<!-- Load syntax highlighting script -->
+<script src="../../highlight/highlight.min.js"></script>
+
+<!-- highlight all <pre><code> tags -->
+<script>hljs.highlightAll();</script>
+
+<!-- Load Button class script-->
+<script src="../../scripts/classes/button.js"></script>
+
+<!-- Load TextTyping script -->
+<script src="../../scripts/classes/TextTyping.js"></script>
+
+<!-- Load BuildWebsite main script -->
+<script src="scripts/BuildWebsite_main.js"></script>
+
+</html>

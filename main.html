@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scratchcode</title>
+    <link rel="stylesheet" href="styles/main_style.css">
+    <link rel="icon" href="images/new_logo.png" type="image/png">
+</head>
+
+<body id="main_body">
+<header>
+    <div class="header_container">
+        <img src="images/new_logo.png" alt="Scratchcode logo" class="logo">
+        <h1 id="main_title">Scratchcode Tutorials</h1>
+    </div>
+    
+</header>
+
+<nav>
+    <a href="main.html">Home</a>
+    <button id="tutorial_menu_button">Tutorials</button>
+    <div id="tutorial_menu" class="dropdown_content">
+        <a href="tutorials/build_website/BuildWebsite.html">How to build a website</a>
+        <a href="tutorials/coding/coding.html">Coding basics</a>
+        <a href="#">Win32 API</a>
+        <a href="#">DirectX12 API</a>
+        <a href="#">Make a game with SDL</a>
+        <!-- Add more links as needed -->
+    </div>
+    <a href="pages/about/about.html">About</a>
+    <a href="pages/contact/contact.html">Contact</a>
+</nav>
+
+<div class="tutorial-container">
+    <div class="tutorial">
+        <h2><img src="images/construction_sign.png" class="logo">This website is currently under construction</h2>
+        <p>It is currently maintained and built by one person. Please be patient, the tutorials are being worked on and will be completed in time.</p>
+    </div>
+</div>
+
+<div class="tutorial-container">
+    <!-- Example tutorial -->
+    <div class="tutorial">
+        <h2><a href="tutorials/build_website/BuildWebsite.html">How to build a website</a></h2>
+        <p>A Step by step approach to building a website</p>
+        <!-- clickable read more section-->
+        <input type="checkbox" class="toggle" id="expandText1">
+        <label for="expandText1" class="arrow">Read more</label>
+        <div class="text">
+            Using html, css, and javascript we build a basic functioning website. Its not the best or prettiest but its a good starting point for a beginner. Gets you thinking about the pieces that make up a website.
+        </div>
+        
+
+    </div>
+    <!-- You can duplicate the above div for more tutorials -->
+</div>
+
+<div class="tutorial-container">
+    <!-- Example tutorial -->
+    <div class="tutorial">
+        <h2><a href="tutorials/coding/coding.html">Coding basics</a></h2>
+        <p>Learn to code basic programs</p>
+        <!-- clickable read more section-->
+        <input type="checkbox" class="toggle" id="expandText2">
+        <label for="expandText2" class="arrow">Read more</label>
+        <div class="text">
+            Using multiple languages we will create simple programs that illustrate the core concepts of programming.
+            <dl>
+                <dt>if else statements</dt>
+                <dd>These statements control program flow if something is true then do this else do this. Its also called branching.</dd>
+              
+                <dt>classes</dt>
+                <dd>Classes are a way of grouping data together in a nice package that can be duplicated easily and resued. Similar to mechanical blueprints the blueprint can be physically built into a machine. With classes, objects can be made which act like a machine with levers and buttons that when pressed or pulled produce an action or event. We call the action or event a funtion. </dd>
+
+                <dt>functions</dt>
+                <dd>A function is like a button that does a particular thing when you push it. With a function it will execute a block of code when it is called.</dd>
+
+                <dt>variables</dt>
+                <dd>Variables are way to hold data in a tiny container to be reused, duplicated, or changed. Similar to using a garbage can, the garbage can is like a variable it can be emptied or filled.</dd>
+
+                <dt>types</dt>
+                <dd>Types are the type of data that a variable can hold. There are many types built into a language including a boolean, int, double and each type has different properties and function. A boolean for example can be true or false and an int can be a negative or positive number.</dd>
+
+                <dt>polymorphism</dt>
+                <dd>Polymorpism is a way to link parts together that normally can't be linked. The key to start a vehical is usually unique and can only start that particular vehical. But with polymorphism its like having a master key that can start any vehical as long as its a vehical. We obviously can't use it to start a dog or cat. In programming we make objects using classes. The classes are a blueprint for the object. Some classes are linked together where a class can inherit from another class. Like a child inherits his fathers traits , the father is the base class and the son is derived class. Using polymorphism the son can take his key and start the fathers car.</dd>
+
+                <dt>switch statements</dt>
+                <dd>Switch is like a pop machine. Say you choose pepsi, you push the button. The machine will switch the mechanism inside to the section where pepsi is stored and then dispense it. Switch statements will switch to a case statement that matches the variable chosen or the button that was pushed. The case statements hold the instructions for dispensing the chosen soda.</dd>
+
+                <dt>loops</dt>
+                <dd>Loops are a way to control repetitive code. In a loop you tell it how many times you want it to repeat and when to stop.</dd>
+
+                <dt>operators</dt>
+                <dd>Examples of operators are: +,=,-. The + operator performs addition in most programming languages. </dd>
+            </dl>          
+            
+        </div>
+    </div>
+    <!-- You can duplicate the above div for more tutorials -->
+</div>
+
+<div class="tutorial-container">
+    <!-- Example tutorial -->
+    <div class="tutorial">
+        <h2>Win32 API</h2>
+        <p>Learn to code a windows program</p>
+        <!-- clickable read more section-->
+        <input type="checkbox" class="toggle" id="expandText3">
+        <label for="expandText3" class="arrow">Read more</label>
+        <div class="text">
+            Like all things in life, there must be a way. Well win32 API is the way on windows, not the prettiest or elegant and its old as balls but it gets the job done. We will step by step build an app.
+        </div>
+    </div>
+    <!-- You can duplicate the above div for more tutorials -->
+</div>
+
+<div class="tutorial-container">
+    <!-- Example tutorial -->
+    <div class="tutorial">
+        <h2>DirectX12 API</h2>
+        <p>Learn to code a direct x program that renders graphics</p>
+        <!-- clickable read more section-->
+        <input type="checkbox" class="toggle" id="expandText4">
+        <label for="expandText4" class="arrow">Read more</label>
+        <div class="text">
+            Using Direct 3D 12 API we will render some cool graphics.
+        </div>
+    </div>
+    <!-- You can duplicate the above div for more tutorials -->
+</div>
+
+<div class="tutorial-container">
+    <!-- Example tutorial -->
+    <div class="tutorial">
+        <h2>Make a game using SDL</h2>
+        <p>Learn to code a game that uses simple direct media layer</p>
+        <!-- clickable read more section-->
+        <input type="checkbox" class="toggle" id="expandText5">
+        <label for="expandText5" class="arrow">Read more</label>
+        <div class="text">
+            Using SDL and C++ language we will build a simple game.
+        </div>
+    </div>
+    <!-- You can duplicate the above div for more tutorials -->
+</div>
+
+
+<footer>
+    <p>&copy; 2023 Scratchcode</p>
+</footer>
+
+</body>
+
+
+<!-- Load scripts -->
+
+<!-- Load Class scripts first -->
+<script src="scripts/classes/TextTyping.js"></script>
+<script src="scripts/classes/button.js"></script>
+
+
+<!-- Load main script last -->
+<script src="scripts/main_script.js"></script>
+
+
+</html>

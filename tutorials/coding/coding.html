@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coding basics</title>
+    
+    <!-- Load style sheets-->
+
+    <!-- Load coding style sheet-->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Load syntax highlighting style sheet-->
+    <link rel="stylesheet" href="../../highlight/styles/vs2015.min.css">
+
+    <!-- Load main style sheet -->
+    <!-- it has the nav header style we need-->
+    <link rel="stylesheet" href="../../styles/main_style.css">
+
+    <!-- Load the new logo -->
+    <link rel="icon" href="../../images/new_logo.png" type="image/png">
+</head>   
+
+
+<body id="main_body">
+<header>
+    <h1 id="main_title">Coding basics</h1>
+</header>
+
+<nav>
+    <a href="../../main.html">Home</a>
+    <button id="tutorial_menu_button">Tutorials</button>
+    <div id="tutorial_menu" class="dropdown_content">
+        <a href="../build_website/BuildWebsite.html">How to build a website</a>
+        <a href="coding.html">Coding basics</a>
+        <a href="#">Win32 API</a>
+        <a href="#">DirectX12 API</a>
+        <a href="#">Make a game with SDL</a>
+        <!-- Add more links as needed -->
+    </div>
+    <a href="../../pages/about/about.html">About</a>
+    <a href="../../pages/contact/contact.html">Contact</a>
+</nav>
+
+<!-- Side bar navigation -->
+<button id="arrow_button" title="click me for quick navigation" class="hovering-arrow">
+    <img src="images/arrow.png" alt="arrow" class="small-button-image">
+</button>
+
+<div id="side-bar-menu" class="side-bar-content">
+    <a href="#main_body">Top of page</a>
+    <a href="#intro">Intro</a>
+    <a href="#s1">Install an IDE</a>
+    <a href="#s2">Compile a Simple Program</a>
+    <a href="#s3">Learn Code Execution</a>
+    <a href="#s4">Learn the Tools of the Trade</a>
+    <a href="#s5">Continue in a specific language</a>  
+    <!-- Add more links here -->
+</div>
+
+
+<h2 id="intro">Intro</h2>
+<p>Programming languages are tools. In construction when you learn to frame walls you might have a hammer, nail gun, measuring tape, and a pencil as your tools. A person with good sense would not learn everything there is too know about pencils in order to start framing a wall. Practically all a person needs to know is how to mark a line on wood. The focus is on building a wall. In this tutorial the focus is on building a program. But For those that want to know every detail and inner workings of the code I have added an "Explain Code" button that when clicked reveals a drop down section explaining the code line by line. I've chosen to use four languages in this tutorial. My hope is that you leave this tutorial with an understanding of programming, syntax and a foundation that can be used for other languages. The tasks in the tutorial are designed to be challenging so do not be too concerned if you move through them very slowly especially if this is your first time learning programming. I encourage you to use any avaliable tools including ChatGPT, Google and Bing Chat. You will need basic computer skill's to follow this tutorial. Basic as in the ability to use a computer, install programs, use a terminal, create files and create directories(folders). 
+
+
+<h2 id="s1">Step 1: Install an IDE</h2>
+<h4>Visual Studio Code</h4>
+<p>Before we can run code, we need an IDE(integrated development enviroment). Ill be using vs-code. It can be downloaded <a href="https://code.visualstudio.com/" target="_blank">here</a>. Vs-code is a lightweight code editor that supports many languages. We will be using four of them: C# ,C++ ,Java and Javascript. You will need to install extensions for C#, C++, and Java. Read through the docs <a href="https://code.visualstudio.com/docs">here</a> if you need help setting up for development.</p>
+
+<h4>Visual Studio Community 2022</h4>
+<p>This IDE is a heavy weight editor. If you have chosen this IDE unfortunately it does not support Java. It does support C#, C++ and Javascript which we will be using so you will be able to follow along with those languages.</p>
+
+<h4>Task 1.0</h4>
+<p>Your task is to setup your IDE and install C#, C++, Javascript and Java language extensions/packages. Depending on the IDE some languages come preinstalled.</p>
+
+
+<h2 id="s2">Step 2: Compile a simple program</h2>
+
+<p>We will start with a goal of making a program that outputs "Hello World" to the console. Here is the code in c++:</p>
+<!-- Code block "Hello World" in cpp -->
+<pre class="code-block"><img id="cpp_helloworld_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cpp_helloworld">#include &lt;iostream&gt; 
+using namespace std;
+        
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+
+<!-- clickable explain code section for cpp hello world-->
+<input type="checkbox" class="toggle" id="explain_cpp_helloworld">
+<label for="explain_cpp_helloworld" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>This is called an include directive it tells the C++ pre-processor to place the entire contents of the file "iostream.h" on the same line. In simple terms it's a copy and paste command. The pre-processor is part of the C++ language and is a program that is run first before the code is compiled. Compiling code is a process by which a program called a compiler parses the code(symbols) into an executable program which then can be run in an OS(operating system) enviroment. The file extension ".exe" is used in Microsoft Windows. The packages you installed for C++ in Step 1 contained a compiler and pre-processor program.</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>The "using" directive in C++ is a powerful feature that affects how the compiler resolves names in your code. It can be used for resolving namespaces. Namespaces are a way to add an extra name to parts of a program and serves a purpose of avoiding name clashes. The standard library uses "std" as their namespace. By declaring "using namespace std" we are telling the compiler to resolve all instances of the standard library. In C++ all statements must end with a semi-colon similar to how sentences end with a period.</p>
+<pre><code>using namespace std;</code></pre>
+
+<p>Without the "using namespace std". The "std::" is must be prefixed to the "cout" and "endl" statements, in order to use them. "::" is called the scope resolution operator. In C++ some character symbols are operators. Like how "+" and "-" in math are symbols that indicate what to do with two numbers on either side. In C++ the "::" operator performs a check in the above scope to find a class, enum or namespace name. We will learn about classes and enums later in the tutorial.</p>
+<pre><code>#include &lt;iostream&gt; 
+int main() {
+    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+    
+<p>This is called the "main" function. It is the first line of code executed by the program. Another name is "main entry point". The "int" indicates that it returns an integer. The parenthesis "()" may contain what are called function arguments. In this example no function arguments are passed to the main function. We will learn more about functions later in the tutorial. Integer types are also explained.</p>
+<pre><code>int main()</code></pre>
+
+<p>"cout" is an object of the class "ostream". We will learn about classes and objects later. For now "cout &lt;&lt; Hello, World!" outputs "Hello, World!" to the console. "endl" inserts a newline and flushes the output stream.</p>
+<pre><code>cout &lt;&lt; "Hello, World!" &lt;&lt; endl;</code></pre>
+
+<p>"return" causes the function to exit. "0" is the "int" value sent back to the caller of "main()".</p>
+<pre><code>return 0;</code></pre>
+
+<p>The "{}" brackets contain the code for the function. Also refered to as scope.</p>
+<pre><code>int main(){ /* code here */ }</code></pre>
+
+<p>"C++" is a very complicated language. And it becomes very verbose to explain since it's parts are defined in terms of other parts and those parts are defined by themselves. It is like an automotive engine being built in a factory. The factory itself operates like an engine. The commercial contractor that built the factory also operates like an engine. An engine being defined as a system of interacting parts with well defined constraints and freedoms to operate. C++ is like an engine that can build factories that build engines. If you find the explainations are not making sense immediately do not give up instead give your mind time to process after reading. Sleep on it.</p>
+    </div>
+</div>   
+
+
+<p>Same program but in a language called C# (C sharp):</p>
+<!-- Code block "Hello World" in c# -->
+<pre class="code-block"><img id="csharp_helloworld_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="csharp_helloworld">using System;
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_csharp_helloworld">
+<label for="explain_csharp_helloworld" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>In C# statements also end with a semi-colon. "{}" are used for function scope. Namespaces are there to avoid name clashes and add an extra scoped layer to a code block. You will notice that C++ and C# are similar like english is to french.</p>
+<p>The "using" directive tells the compiler to use the System namespace.</p>
+<pre><code>using System;</code></pre>
+
+<p>Declares a Namespace called "HelloWorld". The code within the "{}" is part of the namespace "HelloWorld"</p>
+<pre><code>namespace HelloWorld</code></pre>
+
+<p>Declares a class named "Program". Classes are part of object oriented languages where they act as blueprints which can be instantiated/built into an object. Our class "Program" only has one function and its static, meaning it does not need an object to be called. We will discuss static in more detail later.</p>
+<pre><code>class Program</code></pre>
+
+<p>A static Main function that does not return anything and accepts an array of strings as arguments. "void" means nothing in C#. An array of strings will be explained later. For now know that its useful to pass "args" into "Main" from the command line. By using "args" we can control how our Main function is executed at runtime.</p>
+<pre><code>static void Main(string[] args)</code></pre>
+
+<p>Outputs "Hello, World!" to the console window. "Console" is a class in the System namespace. "WriteLine" is method(function) of the "Console" class that accepts a string as an argument. "Hello, World" is a string literal. The dot "." is an operator that allows acessing class members or a namespace.</p>
+<pre><code>Console.WriteLine("Hello, World");</code></pre>
+
+
+    </div>
+</div>
+
+
+
+<p>Using Node.js, In Javascript:</p>
+<!-- Code block "Hello World" in javascript -->
+<pre class="code-block"><img id="js_helloworld_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="js_helloworld">console.log("Hello, World!");</code></pre>
+
+<input type="checkbox" class="toggle" id="explain_js_helloworld">
+<label for="explain_js_helloworld" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>"console" is an object provided by JavaScript enviroments (like browsers and Node.js) that gives access to the browser's debugging console. "log" is a method of the console object which accepts a string as an argument, it can accept other types aswell. "log" sends the string to the console window to be displayed(Node.js).</p>
+<pre><code>console.log("Hello, World!");</code></pre>
+    </div>
+</div>
+
+
+
+
+
+<p>In Java:</p>
+<!-- Code block "Hello World" in Java -->
+<pre class="code-block"><img id="java_helloworld_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="java_helloworld">public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_java_helloworld">
+<label for="explain_java_helloworld" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>In Java all code must be contained in a class. "public" means that the class is accessible from other classes and packages. The code within "{}" is the class body.</p>
+<pre><code>public class HelloWorld</code></pre>
+
+<p>This is the main method, which is the entry point of any Java application. When you run the Java program, the execution starts from the main method. As an access modifier, "public" means that the method can be called from any other class. "static" means that the method belongs to the class, not a specific instance of the class. This is why you can run the main method without creating an instance of the HelloWorld class. "void" means the function returns no value. "main" is the name of the function. "String[] args" these are the parameters passed to the main method. "args" is an array of String objects, representing any command-line arguments that can be passed when the program is executed.</p>
+<pre><code>public static void main(String[] args)</code></pre>
+
+<p>"System" is a class provided by the Java language. "out" is a static member field of the System class. It represents the standard output stream (usually the console). "println" is a method that prints the string "Hello, World!" to the console and after printing adds a newline character.</p>
+<pre><code>System.out.println("Hello, World!");</code></pre>
+
+    </div>
+</div>
+
+
+
+
+<h4>Task 2.0</h4>
+<p>Your task is to figure out how to compile and run the program in C++, C#, Javascript and Java. This will give you experience in using build tools and the IDE.</p>
+
+<h2 id="s3">Step 3: Learn code execution</h2>
+<p>Computer code is like a recipe. Each line or step in the recipe calls for an action. Add a 1 cup of flour, 2 cups of water, 3 tablespoons of oil and 1 teaspoon of yeast. That's how dough is made. In programming terms we call that dough recipe an algorithm. Notice only 1 step at a time can be done, same with computers they can only execute one step or instruction at a time (multithreaded cpus can execute instructions in parallel but each thread must do it one step at a time). The CPU in your pc is most likely made by intel or amd. Intel and amd use an instruction set called x86. This is the lowest form of programming and its called assembly language. For example the c++ compiler will convert the c++ code into x86 instructions for the cpu to execute directly.  </p>
+
+<p>This is the Hello World program in assembly. My compiler is GCC and its set to debug x64. Your assembly of the Hello World program may appear different.</p>
+<pre class="code-block"><img id="asm_helloworld_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="asm_helloworld">.file	"main.cpp"
+	.text
+	.def	__main;	.scl	2;	.type	32;	.endef
+	.section .rdata,"dr"
+.LC0:
+	.ascii "Hello, World!\0"
+	.text
+	.globl	main
+	.def	main;	.scl	2;	.type	32;	.endef
+	.seh_proc	main
+main:
+.LFB2073:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	call	__main
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdx
+	movq	.refptr._ZSt4cout(%rip), %rax
+	movq	%rax, %rcx
+	call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+	movq	%rax, %rcx
+	movq	.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_(%rip), %rax
+	movq	%rax, %rdx
+	call	_ZNSolsEPFRSoS_E
+	movl	$0, %eax
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.section .rdata,"dr"
+_ZNSt8__detail30__integer_to_chars_is_unsignedIjEE:
+	.byte	1
+_ZNSt8__detail30__integer_to_chars_is_unsignedImEE:
+	.byte	1
+_ZNSt8__detail30__integer_to_chars_is_unsignedIyEE:
+	.byte	1
+	.ident	"GCC: (Rev7, Built by MSYS2 project) 13.1.0"
+	.def	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc;	.scl	2;	.type	32;	.endef
+	.def	_ZNSolsEPFRSoS_E;	.scl	2;	.type	32;	.endef
+	.section	.rdata$.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, "dr"
+	.globl	.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+	.linkonce	discard
+.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_:
+	.quad	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+	.section	.rdata$.refptr._ZSt4cout, "dr"
+	.globl	.refptr._ZSt4cout
+	.linkonce	discard
+.refptr._ZSt4cout:
+	.quad	_ZSt4cout
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_asm_helloworld">
+<label for="explain_asm_helloworld" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Indicates the start of a new file, here named "main.cpp".</p>
+<pre><code>.file    "main.cpp"</code></pre>
+
+<p>This is a directive that starts the text segment, which is where the executable code resides.</p>
+<pre><code>.text</code></pre>
+
+<p>Defines metadata for a symbol "__main", likely a function automatically inserted by the compiler for initialization tasks before main() is called.</p>
+<pre><code>.def	__main;	.scl	2;	.type	32;	.endef</code></pre>
+
+<p>Starts a read-only data section, typically for constants like string literals.</p>
+<pre><code>.section .rdata,"dr"</code></pre>
+
+<p>A label marking the position of the string literal in the read-only data section.</p>
+<pre><code>.LC0:</code></pre>
+
+<p>The ASCII string "Hello, World!" followed by a null-terminator, stored in the read-only data section.</p>
+<pre><code>.ascii "Hello, World!\0"</code></pre>
+
+<p>Marks "main" as a global symbol, accessible outside this module.</p>
+<pre><code>.globl	main</code></pre>
+
+<p> Similar to "__main", defines metadata for the "main" function.</p>
+<pre><code>.def	main;	.scl	2;	.type	32;	.endef</code></pre>
+
+<p>Starts a block for Structured Exception Handling (SEH) for main. This is specific to Windows.</p>
+<pre><code>.seh_proc	main</code></pre>
+
+<p>The label indicating the start of the main function.</p>
+<pre><code>main:</code></pre>
+
+<p>A label used internally by the compiler, for organization and reference in the assembly code.</p>
+<pre><code>.LFB2073:</code></pre>
+
+<p>Saves the base pointer on the stack.</p>
+<pre><code>pushq	%rbp</code></pre>
+
+<p>SEH stands for Structured Exception Handling, a mechanism in Windows operating systems for handling exceptions (errors) at the system level. It provides a way for a program to handle various exceptional conditions (like division by zero, access violations, stack overflow, etc.) that occur during the execution of a program. This specific instruction is part of a prologue of a function and is used to record the fact that a register (in this case, %rbp, the base pointer) has been pushed onto the stack.</p>
+<pre><code>.seh_pushreg	%rbp</code></pre>
+
+<p>Sets the base pointer for the current stack frame.</p>
+<pre><code>movq	%rsp, %rbp</code></pre>
+
+<p>An assembly directive used in Windows x86_64 applications to define the frame pointer and its offset for SEH.</p>
+<pre><code>.seh_setframe	%rbp, 0</code></pre>
+
+<p>"subq" stands for "subtract, quad-word".This is a subtraction operation where the result replaces the original value in the destination operand. "$32" is an immediate value, representing the number 32. "%rsp" is the stack pointer register in x86_64 architecture.</p>
+<pre><code>subq	$32, %rsp</code></pre>
+
+<p>The ".seh_stackalloc 32" directive specifically informs the SEH mechanism that 32 bytes of space have been allocated on the stack. This information is crucial for SEH to correctly understand the layout of the stack frame, particularly when it needs to unwind the stack during exception handling.</p>
+<pre><code>.seh_stackalloc	32</code></pre>
+
+<p>This directive indicates to the SEH system that the function prologue has ended. It helps the SEH mechanism understand where the function's actual body (executable code) begins. This is important for SEH to correctly perform stack unwinding and exception handling. When an exception occurs, SEH needs to navigate through the stack frames of functions, and knowing where the prologue ends and the function body begins is crucial for this process.</p>
+<pre><code>.seh_endprologue</code></pre>
+
+<p>"__main" is not a standard part of user-written C++ code. Instead, it's often a function automatically generated by the compiler as part of the program's startup code. This function typically performs certain initializations that are required by the C++ runtime environment before the user-defined main function is called. For example, it might handle global constructors, initialize standard streams, set up exception handling, or perform other platform-specific initializations.</p>
+<pre><code>call	__main</code></pre>
+
+<p>"leaq" stands for "Load Effective Address Quad". It's an instruction used to put a computed memory address into a register. Unlike a mov instruction, which loads the value from the address, leaq only computes and stores the address itself. ".LCO" refers to the label containing the string literal "Hello, World!". "%rip" is the instruction pointer register (sometimes called the program counter), which contains the address of the next instruction to be executed. ".LC0(%rip)" computes the address of the ".LC0" label relative to the current value of "%rip". This is known as RIP-relative (or PC-relative) addressing, which is common in x86_64 architecture for position-independent code (code that can run correctly regardless of its absolute address in memory). "%rax" is one of the general-purpose registers in x86_64 architecture. In many calling conventions, it's used to store return values from functions and is often used in operations involving data transfer</p>
+<pre><code>leaq	.LC0(%rip), %rax</code></pre>
+
+<p>This instruction copies the 64-bit value in the "rax" register into the "rdx" register.</p>
+<pre><code>movq	%rax, %rdx</code></pre>
+
+<p>Loads the address of the C++ std::cout object into the %rax register.</p>
+<pre><code>movq	.refptr._ZSt4cout(%rip), %rax</code></pre>
+
+<p>Copies the value from the "rax" register to the "rcx" register</p>
+<pre><code>movq	%rax, %rcx</code></pre>
+
+<p>In assembly language, the "call" instruction is used to invoke a function. It pushes the address of the next instruction (return address) onto the stack and then jumps to the function specified.  "_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc" is a mangled (encoded) name. Name mangling is a technique used in C++ to allow the compiler to encode additional information (such as namespaces, function arguments, and template parameters) into function names. This mangled name represents a function in the C++ Standard Library. The exact function being called is part of the I/O stream library, specifically an overload of the "operator&gt;&gt;" function for outputting data to a stream.</p>
+<pre><code>call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc</code></pre>
+
+<p>This instruction copies the 64-bit value in the "rax" register into the "rdx" register.</p>
+<pre><code>movq	%rax, %rcx</code></pre>
+
+<p>In a C++ program, when you use "std::cout &gt;&gt; std::endl;", the compiler translates this into one or more calls to functions or manipulators associated with output stream operations. This assembly instruction is part of that generated code and is specifically related to handling the std::endl manipulator.</p>
+<pre><code>movq	.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_(%rip), %rax</code></pre>
+
+<p>This instruction copies the 64-bit value in the "rax" register into the "rdx" register.</p>
+<pre><code>movq	%rax, %rdx</code></pre>
+
+<p>This instruction is part of the assembly code generated by the C++ compiler for handling I/O stream operations. It represents the lower-level operations that happen when you use C++ stream objects (like std::cout, std::ofstream, etc.) to output data.</p>
+<pre><code>call	_ZNSolsEPFRSoS_E</code></pre>
+
+<p>This sets the eax register to zero</p>
+<pre><code>movl	$0, %eax</code></pre>
+
+<p>Adds the value 32 to the current value in the "rsp" register. In the context of a function's stack frame, this typically means deallocating 32 bytes of space from the stack. The stack grows downwards (towards lower memory addresses), so adding to the stack pointer effectively moves it upwards, releasing the space that was previously allocated.</p>
+<pre><code>addq	$32, %rsp</code></pre>
+
+<p>Takes the value from the top of the stack and places it into the "rbp" register.</p>
+<pre><code>popq	%rbp</code></pre>
+
+<p>Used to return from a function to the calling function. It does this by popping the return address from the stack and jumping to that address, thus resuming execution at the point where the function was originally called.</p>
+<pre><code>ret</code></pre>
+
+<p>Used in Windows applications to indicate the end of a function's procedure for Structured Exception Handling. It plays a crucial role in informing the SEH system about the structure and limits of a function's SEH setup, which is essential for accurate exception handling and stack unwinding.</p>
+<pre><code>.seh_endproc</code></pre>
+
+<p>Sections are used to organize different types of data in an executable file. Common sections include ".text" for executable code, ".data" for initialized data, and ".bss" for uninitialized data. The ".rdata" section stands for "read-only data." It is used to store constants and read-only data in the program. "dr" are flags specifying the characteristics of the section. "d" typically stands for "data", indicating that this section contains data (as opposed to executable code). "r" indicates "read-only", which means the contents of this section can be read but not written to during program execution.</p>
+<pre><code>.section .rdata,"dr"</code></pre>
+
+<p>A C++ mangled name likley refers to a C++ standard function.</p>
+<pre><code>_ZNSt8__detail30__integer_to_chars_is_unsignedIjEE:</code></pre>
+
+<p>This could represent a boolean flag, a small constant, or some other form of data used by the C++ library function or object that the mangled name refers to.</p>
+<pre><code>.byte	1</code></pre>
+
+<p>A C++ mangled name likley refers to a C++ standard function.</p>
+<pre><code>_ZNSt8__detail30__integer_to_chars_is_unsignedImEE:</code></pre>
+
+<p>This could represent a boolean flag, a small constant, or some other form of data used by the C++ library function or object that the mangled name refers to.</p>
+<pre><code>.byte	1</code></pre>
+
+<p>The portion "__integer_to_chars_is_unsigned" indicates the name of a function or a variable, likely related to checking whether a given integer type is unsigned.</p>
+<pre><code>_ZNSt8__detail30__integer_to_chars_is_unsignedIyEE:</code></pre>
+
+<p>This could represent a boolean flag, a small constant, or some other form of data used by the C++ library function or object that the mangled name refers to.</p>
+<pre><code>.byte	1</code></pre>
+
+<p>The ".ident" directive and the accompanying string are used for informational purposes. They help in identifying the compiler version and environment used to build the binary, which can be valuable for debugging, auditing, or tracking the provenance of compiled code.</p>
+<pre><code>.ident	"GCC: (Rev7, Built by MSYS2 project) 13.1.0"</code></pre>
+
+<p>";" indicates the begining of a comment. ".def" stands for "define" or "declare." It is used to start the definition of a symbol in assembly language, particularly within object files or assembly listings generated by compilers. It's part of the metadata that helps in correctly resolving and linking the symbol during the compilation and linking process. This code represents a specific function in the C++ standard library related to output stream operations.</p>
+<pre><code>.def	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc;	.scl	2;	.type	32;	.endef</code></pre>
+
+<p>The function represented by "_ZNSolsEPFRSoS_E" is likely an overloaded operator function used for outputting data to a stream, such as "std::cout".</p>
+<pre><code>.def	_ZNSolsEPFRSoS_E;	.scl	2;	.type	32;	.endef</code></pre>
+
+<p>Specify's a section of the object file for storing a reference pointer to the std::endl function.</p>
+<pre><code>.section	.rdata$.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, "dr"</code></pre>
+
+<p>This symbol is associated with the std::endl function in the C++ Standard Library, and marking it as global allows it to be accessed from other parts of the compiled program or other linked modules.</p>
+<pre><code>.globl	.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_</code></pre>
+
+<p>By marking these sections with ".linkonce discard", the compiler instructs the linker to ensure that each piece of such code is included only once in the final executable, regardless of how many times it appears in the individual object files.</p>
+<pre><code>.linkonce	discard</code></pre>
+
+<p>This line of assembly code is defining a reference pointer to the std::endl function. This allows other parts of the program to reference "std::endl" via this pointer.</p>
+<pre><code>.refptr._ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_:</code></pre>
+
+<p>The ".quad" directive is used in assembly language to allocate a space of 8 bytes (a quad-word, which is 64 bits on x86_64 architecture) and initialize it with a given value. The demangled form of this symbol likely refers to a specific function or object related to the C++ Standard Library's I/O stream operations.</p>
+<pre><code>.quad	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_</code></pre>
+
+<p>This directive is defining a section of the object file to store a reference pointer to the "std::cout" object. This allows parts of the program to reference "std::cout" via this pointer</p>
+<pre><code>.section	.rdata$.refptr._ZSt4cout, "dr"</code></pre>
+
+<p>Mark's the symbol "_ZSt4cout" as global. Declaring this mangled symbol as global ensures that when the program is linked, the linker can correctly resolve references to "std::cout" from any part of the program that includes this object file.</p>
+<pre><code>.globl	.refptr._ZSt4cout</code></pre>
+
+<p>By marking these sections with ".linkonce discard", the compiler instructs the linker to ensure that each piece of such code is included only once in the final executable, regardless of how many times it appears in the individual object files.</p>
+<pre><code>.linkonce	discard</code></pre>
+
+<p>This line in the assembly code defines a label for the reference pointer to "std::cout". The actual memory address of "std::cout" will be stored at this label.</p>
+<pre><code>.refptr._ZSt4cout:</code></pre>
+
+<p>Allocates a 64-bit space in the assembly code and initializes it with the address represented by the symbol "_ZSt4cout"</p>
+<pre><code>.quad	_ZSt4cout</code></pre>
+
+    </div>
+</div>
+
+<p>Our hello world program can be broken down further to the lowest form of information which is 1's and 0's. 1's and 0's are grouped together to represent numbers and instructions. All software and code follows this pattern of being built upon itself.</p>
+
+<h4>Task 3.0</h4>
+<p>Your task is to generate the assembly from the C++ Hello World program.</p>
+
+
+
+<h2 id="s4">Step 4: Learn the tools of the trade</h2>
+<h3>if else statements</h3>
+<p>These statements control program flow. If something is true then do this else do this. It is also called branching. Compile and run this program, then change on to false, recompile and run. Notice it outputs "switch is off" when on is false and when on is true it outputs "switch is on".</p>
+<pre class="code-block"><img id="cpp_ifelse_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cpp_ifelse">// ifelse C++ example program
+#include &lt;iostream&gt;
+int main(){
+    // this is a comment, it is ignored by the compiler and is not executed
+    /* this is also a comment */
+    bool on{true}; // change to: bool on{false};
+    if(on){
+        // if on is true this will execute any code inside the curly braces
+        std::cout &lt;&lt; "switch is on" &lt;&lt; std::endl; // in c++ a semi-colon ends a line of code, like a period in a sentence.
+    }
+    else{
+        // if on is false this will execute any code inside the curly braces
+        std::cout &lt;&lt; "switch is off" &lt;&lt; std::endl;
+    }
+    // std::cout &lt;&lt; "text to be displayed in the terminal" &lt;&lt; std::endl;
+    // std::cout is a function that can accept almost any type for which the &lt;&lt; operator is overloaded, the type we passed in is a const char*
+    // we will learn more about this later 
+    
+    return 0; // main function must return an integer value, to indicate we sucessfully executed to the end of the main function we return the value 0
+}
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_cpp_ifelse">
+<label for="explain_cpp_ifelse" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Pre-processor directive that copies the entire contents of "iostream.h" file and pastes it on the same line. "iostream.h" contains definitions for "std::cout" and "std::endl".</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>The main function or main entry point of the application.</p>
+<pre><code>int main()</code></pre>
+
+<p>Declares a boolean variable called "on" and initializes it to true.</p>
+<pre><code>bool on{true};</code></pre>
+
+<p>if statement that checks if "on" is true or false. If it is true the code within the "{}" gets executed. If "on" is false the else statment code within the "{}" gets executed.</p>
+<pre><code>if(on){}</code></pre>
+
+<p>Sends the string "switch is on" to the console output, then makes a newline and flushes the output stream.</p>
+<pre><code>std::cout &lt;&lt; "switch is on" &lt;&lt; std::endl;</code></pre>
+
+<p>If "on" is false "else{}" gets executed.</p>
+<pre><code>else{}</code></pre>
+
+<p>Sends the string "switch is off" to the console output, then makes a newline and flushes the output stream.</p>
+<pre><code>std::cout &lt;&lt; "switch is off" &lt;&lt; std::endl;</code></pre>
+
+<p>Returns zero to the caller of the main function which is the operating system. It will be displayed in the console.</p>
+<pre><code>return 0;</code></pre>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<p>Here's another example but in Java.</p>
+<pre class="code-block"><img id="java_ifelse_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="java_ifelse">// ifelse Java example program
+import java.util.Scanner;
+public class ifelse {  // In Java, when you have a public class, the filename must match the class name. Filename: ifelse.java
+    public static void main(String[] args){ // this is the main function
+        // Create a Scanner object
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user
+        System.out.println("Enter on to turn on the switch and off to turn off the switch");
+
+        // get the user input
+        String light_switch_state = scanner.nextLine(); // gets the typed text from the next line
+
+        // anything other than "on" will turn off the light
+        if(light_switch_state.equals("on")){ // test if light_switch_state equals "on"
+            System.out.println("Light bulb turned on"); // output text to the terminal
+        }
+        else{
+            System.out.println("Light bulb turned off"); // output text to the terminal
+        }
+
+        scanner.close(); // delete scanner object
+    }
+}</code></pre>
+<input type="checkbox" class="toggle" id="explain_java_ifelse">
+<label for="explain_java_ifelse" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>This is an import statement that brings the Scanner class from the java.util package into the current file's namespace. This allows you to use the Scanner class in your Java program without having to specify its full path every time. Its similar to C++ namespaces.</p>
+<pre><code>import java.util.Scanner;</code></pre>
+
+<p>Declaration of a Java class called "ifelse". In Java all code is organized in classes.</p>
+<pre><code>public class ifelse{}</code></pre>
+
+<p>Main function for the application similar to "int main()" in C++. "static" meaning it can be called without a class object. "void" means it returns nothing once it has executed all code inside. The "String[] args" are command line arguments.</p>
+<pre><code>public static void main(String[] args){}</code></pre>
+
+<p>Scanner is a class in the "java.util" package. Using new to make a new instance of the class and setting it equal to the variable "scanner". "System.in" is a static field of the System class in Java that provides an InputStream object, which is typically used to read bytes of data from the standard input, such as the keyboard.</p>
+<pre><code>Scanner scanner = new Scanner(System.in);</code></pre>
+
+<p>This prints the string literal "Enter on to turn on the switch and off to turn off the switch" to the console. "System" is a final class provided by Java in the "java.lang" package. It cannot be instantiated (meaning you cannot create objects of the System class) but provides several useful class fields and methods. "out" is a static field of the System class. It's an instance of PrintStream, which is a public and accessible output stream. "println" is a method of the PrintStream class. The PrintStream class has several overloaded versions of the println method to handle different data types.</p>
+<pre><code>System.out.println("Enter on to turn on the switch and off to turn off the switch");</code></pre>
+
+<p>"nextLine()" is a method of the Scanner class. It reads the next line of input from the input source (in this case, the console) and returns it as a String. The method reads the input until it encounters a line terminator (like a newline character). Wait's for the user to input something and press the enter key. Until this happens, the program will be paused, or "blocked", on this line.</p>
+<pre><code>String light_switch_state = scanner.nextLine();</code></pre>
+
+<p>".equals" is a method of the String class. It compares two strings and returns a boolean. So if "light_switch_state" holds the string "on" then ".equals" will return true. If ".equals" returns true then the code in "{}" is executed.</p>
+<pre><code>if(light_switch_state.equals("on")){}</code></pre>
+
+<p>Prints the string literal "Light bulb turned on" to the console.</p>
+<pre><code>System.out.println("Light bulb turned on");</code></pre>
+
+<p>If the ".equals" method returns false the else statement is executed.</p>
+<pre><code>else{}</code></pre>
+
+<p>Prints the string literal "Light bulb turned off" to the console.</p>
+<pre><code>System.out.println("Light bulb turned off");</code></pre>
+
+<p>The ".close()" method is a part of the Scanner class. When called, it releases the underlying resource that the Scanner instance is using.</p>
+<pre><code>scanner.close();</code></pre>
+
+    </div>
+</div>
+
+
+<h4>Task 4.0</h4>
+<p>Your task is to modify the ifelse C++ example program so that it gets user input to change on to either true or false similar to the ifelse Java example.</p>
+
+
+<h3>Variables</h3>
+<p>Variables are way to hold data in a tiny container to be reused, duplicated, or changed. Similar to using a garbage can, the garbage can is like a variable it can be emptied or filled. In the previous example "on" was a variable, it can be true or false. Depending on the language variable names must conform to a set of rules.</p>
+<p>C++ rules for variables:</p>
+<ol>
+    <li>Must start with a letter (uppercase or lowercase) or an underscore (_).</li>
+    <li>After the first character, you can use letters, digits (0-9), or underscores.</li>
+    <li>Cannot contain spaces or special symbols like "#", "$", "%", etc.</li>
+    <li>C++ is case-sensitive, so "myVariable", "MyVariable", and "MYVARIABLE" are considered different identifiers.</li>
+    <li>Cannot use C++ reserved keywords as variable names. Keywords are words that have special meaning in C++ syntax, like "int", "return", "if", etc.</li>
+</ol>
+<p>C# rules for variable names are the same as C++.</p>
+<p>JavaScript has similar rules as C++ with one difference. Variable names can being with a "$".</p>
+<p>Java rules for variable names are the same as JavaScript.</p>
+
+
+
+<pre class="code-block"><img id="cpp_variables_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cpp_variables">// variables C++ example program
+#include &lt;iostream&gt; // the header file that contains all the code that defines functions like std::cout and the &lt;&lt; operator 
+#include &lt;limits&gt; // std::numeric_limits&lt;int&gt; is defined in this header, we will learn more about header files later 
+int main(){
+    // int represents an integer type, it can hold a value in the range of -2,147,483,648 to 2,147,483,647
+    int number{5}; // number is initially assigned the value: 5
+    std::cout &lt;&lt; number &lt;&lt; "\n"; // outputs 5 to the console
+    number = 7; // number is now assigned a new value of: 7
+    std::cout &lt;&lt; number &lt;&lt; "\n"; // outputs 7 to the console
+
+    // Here we get the max and min value for a integer
+    int max_int = std::numeric_limits&lt;int&gt;::max();
+    int min_int = std::numeric_limits&lt;int&gt;::min();
+
+    std::cout &lt;&lt; "Maximum int value: " &lt;&lt; max_int &lt;&lt; "\n"; // outputs 2,147,483,647
+    std::cout &lt;&lt; "Minimum int value: " &lt;&lt; min_int &lt;&lt; "\n"; // outputs -2,147,483,648
+
+    return 0;
+}    
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_cpp_variables">
+<label for="explain_cpp_variables" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Pre-processor directive that copies the entire contents of "iostream.h" file and pastes it on the same line. "iostream.h" contains definitions for "std::cout" and "std::endl".</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>Pre-processor directive that copies the entire contents of "limits.h" file and pastes it on the same line. "limits.h" contains templates for determining the sizes of types(int, char, double). Templates are an advanced topic to be discussed later.</p>
+<pre><code>#include &lt;limits&gt;</code></pre>
+
+<p>The main function or main entry point of the application.</p>
+<pre><code>int main()</code></pre>
+
+<p>Declares an int type variable named "number" and initializes it to "5". In C++ "{}" can be used to initialize variables as well as the assignment operator "=". So "int number = 5" is also valid.</p>
+<pre><code>int number{5};</code></pre>
+
+<p>Prints the contents of the variable "number" to the console. So "5" is printed. "\n" is a newline escape character its similar to "std::endl" in that it begins a newline but the difference is that it does not flush the output stream.</p>
+<pre><code>std::cout &lt;&lt; number &lt;&lt; "\n";</code></pre>
+
+<p>The variable "number" is assigned a new value "7".</p>
+<pre><code>number = 7;</code></pre>
+
+<p>Prints the contents of the variable "number" to the console. Since we assigned a new value "7" the contents of "number" are changed to hold "7" and that is what is printed to the console.</p>
+<pre><code>std::cout &lt;&lt; number &lt;&lt; "\n";</code></pre>
+
+<p>"max_int" is assigned the maximum value an "int" type can hold which is "2,147,483,647".</p>
+<pre><code>int max_int = std::numeric_limits&lt;int&gt;::max();</code></pre>
+
+<p>"min_int" is assigned the minimum value an "int" type can hold which is "-2,147,483,648".</p>
+<pre><code>int min_int = std::numeric_limits&lt;int&gt;::min();</code></pre>
+
+<p>The value of "max_int" is printed to the console. Which is "2,147,483,647"./p>
+<pre><code>std::cout &lt;&lt; "Maximum int value: " &lt;&lt; max_int &lt;&lt; "\n";</code></pre>
+
+<p>The value of "min_int" is printed to the console. Which is "-2,147,483,648".</p>
+<pre><code>std::cout &lt;&lt; "Minimum int value: " &lt;&lt; min_int &lt;&lt; "\n";</code></pre>
+
+<p>Zero is returned to indicate successful run of the main function.</p>
+<pre><code>return 0;</code></pre>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<p>This example is in C#.</p>
+<pre class="code-block"><img id="cs_variables_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cs_variables">// C# variables example program
+using System; // include the system namespace
+namespace variables // our declared namespace
+{
+    class Program // main class
+    {
+        static void Main(string[] args) // main function
+        {
+            int myInt = 10;
+            float myFloat = 20.5f;
+            char myChar = 'A';
+            bool myBool = true;
+            string myString = "Hello, World!";
+            DateTime today = DateTime.Now;
+
+            Console.WriteLine(myInt); // outputs: 10
+            Console.WriteLine(myFloat); // outputs: 20.5
+            Console.WriteLine(myChar); // outputs: A
+            Console.WriteLine(myBool); // outputs: True
+            Console.WriteLine(myString); // outputs: Hello World
+            Console.WriteLine(today); // outputs: current date and time
+        }
+    }
+}
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_cs_variables">
+<label for="explain_cs_variables" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Similar to Java import and C++ namespaces. Imports a namespace into a program.</p>
+<pre><code>using System;</code></pre>
+
+<p>Declares a namespace named "variables". This is useful in large programs to avoid name clashes. It is here for demonstration.</p>
+<pre><code>namespace variables{}</code></pre>
+
+<p>Declares a class named "Program". This is to house our Main function.</p>
+<pre><code>class Program{}</code></pre>
+
+<p>"static" meaning it can be called without an instance or object of the class. "void" meaning it returns nothing. "Main" is the name of the function. "string[] args" are command line arguments.</p>
+<pre><code>static void Main(string[] args){}</code></pre>
+
+<p>Declares a variable "myint" of type int and assigns it the value "10". "int" stands for integer and they represent whole numbers which can be negative or postive. It is usually a 32-bit signed value which has a maximum value of "2,147,483,647" and a minimum of "-2,147,483,648".</p>
+<pre><code>int myInt = 10;</code></pre>
+
+<p>Declares a variable "myFloat" of type float and assigns it the value "20.5". "float" represents a number with a fractional part. The suffix "f" at the end of "20.5f" explicitly marks the number as a float. In C#, literal floating-point numbers are double-precision (double) by default. The "f" suffix is necessary to indicate that the number should be treated as a float (single precision) instead of a double. "float" in C# has a range of ±1.5 x 10^-45 to ±3.4 x 10^38.</p>
+<pre><code>float myFloat = 20.5f;</code></pre>
+
+<p>Declares a variable "mychar" of type "char" and assigns it the value "A". "mychar" now holds the character "A". Single quotes are used to initialize a character literal. Double quotes are used for strings. A "char" in C# is a 16-bit data type. It occupies 2 bytes of memory. C# uses Unicode to represent characters, which allows it to handle a wide range of characters from different languages and symbols. </p>
+<pre><code>char myChar = 'A';</code></pre>
+
+<p>Declares a variable "mybool" of type "bool" and assigns it the value "true". "mybool" can be assigned only two values either "true" or "false".</p>
+<pre><code>bool myBool = true;</code></pre>
+
+<p>Declares a variable "myString" of the string class and assigns it the value "Hello, World!". The string class has many methods avaliable which make working with text easier.</p>
+<pre><code>string myString = "Hello, World!";</code></pre>
+
+<p>Declares a variable "today" of the "DateTime" struct and assigns it the value returned by the property "DateTime.Now". Which is the current date and time when the line of code is executed.</p>
+<pre><code>DateTime today = DateTime.Now;</code></pre>
+
+<p>The rest of the code should be fairly straight-forward. We output the variables values to the console.</p>
+<pre><code>Console.WriteLine(myInt);
+Console.WriteLine(myFloat);
+Console.WriteLine(myChar);
+Console.WriteLine(myBool);
+Console.WriteLine(myString);
+Console.WriteLine(today);
+</code></pre>
+
+
+
+    </div>
+</div>
+
+
+
+<h4>Task 4.1</h4>
+<p>Your task is to write a program in Javascript that performs the same function as the C# variables program.</p>
+
+<h3>Functions</h3>
+<p>A function is like a button that does a particular thing when you push it. With a function it will execute a block of code when it is called.</p>
+<pre class="code-block"><img id="cpp_functions_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cpp_functions">// c++ functions example program
+#include &lt;iostream&gt;
+// this is called the function definition and it must be defined before we can call it
+// in c++ a function must be defined before it is called since the compiler reads the code top to bottom
+int add(int x, int y){ // int x and int y are the function parameters, they act as the function's own variables
+    return x+y; // this adds x,y and returns the result 
+} 
+
+// this called the main function its the main entry point of any c++ application
+// it gets called first when you execute the program
+int main(){
+    // declare our variables
+    int x{5},y{7},result{}; 
+    // in c++ this is the same as
+    // int x = 5;
+    // int y = 7;
+    // int result = 0;
+
+    // call our add function and save the result
+    result = add(x,y);
+
+    // output the result to the console
+    std::cout &lt;&lt; result &lt;&lt; "\n"; // outputs: 12
+
+    // output the function return value directly without using variables
+    std::cout &lt;&lt; add(5,7) &lt;&lt; "\n"; // outputs: 12
+    std::cout &lt;&lt; add(6,1) &lt;&lt; "\n"; // outputs: 7
+    std::cout &lt;&lt; add(add(1,1),add(2,1)); // nested call to add function, outputs: 5
+
+    // "\n" is called new line character it gives us a newline to output to in the console
+    
+    return 0;
+}
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_cpp_functions">
+<label for="explain_cpp_functions" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Pre-processor directive that copies the entire contents of "iostream.h" file and pastes it on the same line. "iostream.h" contains definitions for "std::cout" and "std::endl".</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>The function "add" returns an integer and accepts two integers "x" and "y" as arguments. This is the function definition.</p>
+<pre><code>int add(int x, int y){}</code></pre>
+
+<p>Returns the value of "x+y" to the caller of the function.</p>
+<pre><code>return x+y;</code></pre>
+
+<p>The main function or main entry point of the application.</p>
+<pre><code>int main(){}</code></pre>
+
+<p>Declares three integer variables "x", "y" and "result". "x" is set to the value "5", "y" is set to the value "7" and "result" is default initialized to "0".</p>
+<pre><code>int x{5},y{7},result{};</code></pre>
+
+<p>Call the "add" function and assign the value to "result". "result" will be assigned "12".</p>
+<pre><code>result = add(x,y);</code></pre>
+
+<p>Outputs the value stored in "result" which is "12". "\n" is a newline escape character, it makes a newline in the console.</p>
+<pre><code>std::cout &lt;&lt; result &lt;&lt; "\n";</code></pre>
+
+<p>This time we pass in values "5" and "7" directly to the function call and output the result to the console.</p>
+<pre><code>std::cout &lt;&lt; add(5,7) &lt;&lt; "\n";</code></pre>
+
+<p>Outputs "7" in the console.</p>
+<pre><code>std::cout &lt;&lt; add(6,1) &lt;&lt; "\n";</code></pre>
+
+<p>Here we nest calls to "add" function. We can pass in "add(1,1)" as an argument since it returns an integer. The "add" function accepts an integer so any function that returns an integer can be passed in as an argument.</p>
+<pre><code>std::cout &lt;&lt; add(add(1,1),add(2,1));</code></pre>
+
+<p>Zero is returned to indicate successful run of the main function.</p>
+<pre><code>return 0;</code></pre>
+
+
+    </div>
+</div>
+
+
+<p>Similar program, in Java.</p>
+<pre class="code-block"><img id="java_functions_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="java_functions">// Java functions example program
+public class functions{
+    // add function
+    public static int add(int x,int y){
+        return x+y;
+    }
+    // main function
+    public static void main(String args[]){
+        System.out.println(add(1,2)); // outputs: 3
+        System.out.println(add(4,5)); // outputs: 9
+    }
+}</code></pre>
+<input type="checkbox" class="toggle" id="explain_java_functions">
+<label for="explain_java_functions" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">     
+<p>"public" is an access modifier in Java. It means that the class functions can be accessed from other classes in any package. If no access modifier is specified, the class has package-private access by default, meaning it can only be accessed from within the same package. "class" defines a new class. "functions" is the name of the class.</p>
+<pre><code>public class functions{}</code></pre>
+
+<p>"public" means that the method can be accessed by any other class. The "static" keyword means that the method belongs to the class, rather than an instance of the class. This allows the method to be called without creating an object of the class. "int" specifies the return type of the method. In this case, int indicates that the method will return an integer value.</p>
+<pre><code>public static int add(int x,int y){}</code></pre>
+
+<p>Returns x plus y to the caller of the function.</p>
+<pre><code>return x+y;</code></pre>
+
+<p>Prints "3" to the console.</p>
+<pre><code>System.out.println(add(1,2));</code></pre>
+
+<p>Prints "9" to the console.</p>
+<pre><code>System.out.println(add(4,5));</code></pre>
+
+    </div>
+</div>
+
+
+
+<h4>Task 4.2</h4>
+<p>Your task is to write the Java functions program in C#.</p>
+
+<h3>Types</h3>
+<p>Types are the type of data that a variable can hold. There are many types built into a language including a boolean, int, double and each type has different properties and function. A boolean for example can be true or false and an int can be a negative or positive number.</p>
+
+<pre class="code-block"><img id="cpp_types_cpybtn" src="images/copy_icon.png" alt="cpoy icon" class="copy_button"><code id="cpp_types">// c++ types example program
+#include &lt;iostream&gt;
+#include &lt;typeinfo&gt;
+
+int main(){
+    int myInt = 10;
+    double myDouble = 20.5;
+    char myChar = 'A';
+    bool myBool = true;
+
+    std::cout &lt;&lt; "Type of myInt: " &lt;&lt; typeid(myInt).name() &lt;&lt; "\n"; // outputs: int
+    std::cout &lt;&lt; "Type of myDouble: " &lt;&lt; typeid(myDouble).name() &lt;&lt; "\n"; // outputs: double
+    std::cout &lt;&lt; "Type of myChar: " &lt;&lt; typeid(myChar).name() &lt;&lt; "\n"; // outputs: char
+    std::cout &lt;&lt; "Type of myBool: " &lt;&lt; typeid(myBool).name() &lt;&lt; "\n"; // outputs: bool
+
+    return 0;
+}</code></pre>
+<input type="checkbox" class="toggle" id="explain_cpp_types">
+<label for="explain_cpp_types" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">  
+<p>Pre-processor directive that copies the entire contents of "iostream.h" file and pastes it on the same line. "iostream.h" contains definitions for "std::cout" and "std::endl".</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>Pre-processor directive that copies the entire contents of "typeinfo.h" file and pastes it on the same line. "typeinfo.h" contains definitions that allow an objects type to be determined at run time.</p>
+<pre><code>#include &lt;typeinfo&gt;</code></pre>
+
+<p>The main function or main entry point of the application.</p>
+<pre><code>int main(){}</code></pre>
+
+<p>Declares a variable "myInt" of the type "int" and assigns it the value of "10".</p>
+<pre><code>int myInt = 10;</code></pre>
+
+<p>Declares a variable "myDouble" of the type "double" and assigns it the value of "20.5".</p>
+<pre><code>double myDouble = 20.5;</code></pre>
+
+<p>Declares a variable "myChar" of the type "char" and assigns it the value "A".</p>
+<pre><code>char myChar = 'A';</code></pre>
+
+<p>Declares a variable "myBool" of the type "bool" and assigns it the value "true".</p>
+<pre><code>bool myBool = true;</code></pre>
+
+<p>"typeid" is an operator provided by C++ RTTI(C++ Runtime Type Information). It is used to get type information of an expression or a type. "name()" is a member function of the std::type_info class. It returns a C-style character string representing the name of the type. Prints the type of "myInt" to the console.</p>
+<pre><code>std::cout &lt;&lt; "Type of myInt: " &lt;&lt; typeid(myInt).name() &lt;&lt; "\n";</code></pre>
+
+<p>Prints the type of "myDouble" to the console.</p>
+<pre><code>std::cout &lt;&lt; "Type of myDouble: " &lt;&lt; typeid(myDouble).name() &lt;&lt; "\n";</code></pre>
+
+<p>Prints the type of "myChar" to the console.</p>
+<pre><code>std::cout &lt;&lt; "Type of myChar: " &lt;&lt; typeid(myChar).name() &lt;&lt; "\n";</code></pre>
+
+<p>Prints the type of "myBool" to the console.</p>
+<pre><code>std::cout &lt;&lt; "Type of myBool: " &lt;&lt; typeid(myBool).name() &lt;&lt; "\n";</code></pre>
+
+<p>Zero is returned to indicate successful run of the main function.</p>
+<pre><code>return 0;</code></pre>
+
+    </div>
+</div>
+
+
+
+<p>Each language has many different types. Here is a list of C++ types built into the language.</p>
+<ol>
+    <li><b>bool:</b> holds true or false.</li>
+    <li><b>char:</b> holds a single character, an ASCII character.</li>
+    <li><b>wchar_t:</b> wide character. Used for Unicode or other character sets that can't be represented using a single byte.</li>
+    <li><b>short int or short:</b> holds a value ranging from -32,768 to 32,767. Memory size is 16-bits or 2 bytes.</li>
+    <li><b>int:</b> holds an integer value ranging from -2,147,483,648 to 2,147,483,647. Memory size is 32 bits or 4 bytes.</li>
+    <li><b>unsigned int:</b> holds a value in the range from 0 to 4,294,967,295. Memory size is 32-bits or 4 bytes. Can only hold positive integers.</li>
+    <li><b>long int or long:</b> on many modern systems, especially those with a 64-bit architecture, a long might be 64 bits, or 8 bytes. In this case, it can represent a range from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.</li>
+    <li><b>unsigned long:</b> ranges in value from 0 to 18,446,744,073,709,551,615 depending on the system</li>
+    <li><b>long long int or long long:</b> ranges in value from -2^63 to 2^63 - 1 depending on the system.</li>
+    <li><b>unsigned long long int or unsigned long long:</b> ranges in value from 0 to 2^64-1. Holds only positive integers.</li>
+    <li><b>float:</b> holds a decimal number. Typically uses 32bits or 4bytes in memory. </li>
+    <li><b>double:</b> holds a decimal number with higher precision than a float. Typically uses 64bits or 8bytes of memory.</li>
+    <li><b>long double:</b> holds a decimal number with higher precision than a double. Check with system to find out exact precision.</li>
+    <li><b>void:</b> represents the absence of value. Null or nothing.</li>
+    <li><b>pointers:</b> stores the address of a variable.</li>
+    <li><b>enum:</b> user-defined type that consists of a set of named integer constant values.</li>
+    <li><b>class:</b> a way to define custom types. A blueprint.</li>
+    <li><b>struct:</b> same as a class except it members are public by default.</li>
+    <li><b>union:</b> a user-defined data type that allows storing different types of data in the same memory location.</li>
+</ol>
+
+<h4>Task 4.3</h4>
+<p>Your task is to write the C++ types example in C#.</p>
+
+
+
+
+<h3>Loops</h3>
+<p>Loops are a way to control repetitive code. In a loop you tell it how many times you want it to repeat and when to stop. Theres three types of loops. There's a while loop, do while, and for loop. Here's some examples.</p>
+<p>While loop:</p>
+<pre class="code-block"><img id="cpp_whileloop_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cpp_whileloop_code">// c++ while loop example program
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+int main(){
+    std::string test{};
+    char c{'f'};
+    while(test.size()&lt;20){ // if the length of test is under 20 the loop continues
+        // same as: test = test + c;
+        test+=c; // in c++ the + operator is overloaded to allow adding characters to strings
+        std::cout &lt;&lt; test &lt;&lt; "\n";
+    }
+    
+    return 0;
+    // outputs: 
+    /*  f
+        ff
+        fff
+        ffff
+        fffff
+        ffffff
+        fffffff
+        ffffffff
+        fffffffff
+        ffffffffff
+        fffffffffff
+        ffffffffffff
+        fffffffffffff
+        ffffffffffffff
+        fffffffffffffff
+        ffffffffffffffff
+        fffffffffffffffff
+        ffffffffffffffffff
+        fffffffffffffffffff
+        ffffffffffffffffffff */
+}</code></pre>
+<input type="checkbox" class="toggle" id="explain_cpp_whileloop">
+<label for="explain_cpp_whileloop" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Pre-processor directive that copies the entire contents of "iostream.h" file and pastes it on the same line. "iostream.h" contains definitions for "std::cout" and "std::endl".</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>Contains definitions for the string class. ".size()" method is defined their.</p>
+<pre><code>#include &lt;string&gt;</code></pre>
+
+<p>The main function or main entry point of the application.</p>
+<pre><code>int main()</code></pre>
+
+<p>Declares a string variable "test" and initializes it to a blank string.</p>
+<pre><code>std::string test{};</code></pre>
+
+<p>Declares a variable "c" of the type "char" and assigns it the value "f".</p>
+<pre><code>char c{'f'};</code></pre>
+
+<p>"while" loop with a condition. The loop continues executing while the condition "test.size()" is less than 20. ".size()" is a method of the string class that returns the length of the string. "&lt;" is an operator that compares two values, whether the value on the left side is less than the value on the right side and returns a boolean.</p>
+<pre><code>while(test.size()&lt;20){}</code></pre>
+
+<p>"+=" operator is called compound assignment operator. It performs addition and assignment in one step. The "+=" operator is overloaded to handle characters and strings in the string class. The variable "c" gets added to test after each iteration causing it to accumulate in test.</p>
+<pre><code>test+=c;
+test = test + c; // in expanded form
+</code></pre>
+
+<p>Prints out the string in "test" each iteration.</p>
+<pre><code>std::cout &lt;&lt; test &lt;&lt; "\n";</code></pre>
+
+<p>Zero is returned to indicate successful run of the main function.</p>
+<pre><code>return 0;</code></pre>
+
+    </div>
+</div>
+
+
+
+
+
+<p>For loop:</p>
+<pre class="code-block"><img id="cpp_forloop_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cpp_forloop_code">// c++ forloop example program
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main(){
+    std::string test{};
+    char c{'f'};
+    // theres three parts to the for loop
+    // 1. int i{}; is the variable used in the loop
+    // 2. is the condition i&lt;20; which means loop until this becomes false
+    // 3. i++(i = i + 1; ) means to increment i each time the loop executes 
+    for(int i{};i&lt;20;i++){ 
+        test+=c;
+        std::cout &lt;&lt; test &lt;&lt; "\n";
+    }
+
+    return 0;
+
+    // outputs:
+    /*  f
+        ff
+        fff
+        ffff
+        fffff
+        ffffff
+        fffffff
+        ffffffff
+        fffffffff
+        ffffffffff
+        fffffffffff
+        ffffffffffff
+        fffffffffffff
+        ffffffffffffff
+        fffffffffffffff
+        ffffffffffffffff
+        fffffffffffffffff
+        ffffffffffffffffff
+        fffffffffffffffffff
+        ffffffffffffffffffff */
+}</code></pre>
+<input type="checkbox" class="toggle" id="explain_cpp_forloop">
+<label for="explain_cpp_forloop" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Pre-processor directive that copies the entire contents of "iostream.h" file and pastes it on the same line. "iostream.h" contains definitions for "std::cout" and "std::endl".</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>Contains definitions for the string class. ".size()" method is defined their.</p>
+<pre><code>#include &lt;string&gt;</code></pre>
+
+<p>The main function or main entry point of the application.</p>
+<pre><code>int main()</code></pre>
+
+<p>Declares a string variable "test" and initializes it to a blank string.</p>
+<pre><code>std::string test{};</code></pre>
+
+<p>Declares a variable "c" of the type "char" and assigns it the value "f".</p>
+<pre><code>char c{'f'};</code></pre>
+
+<p>There is three parts to a for loop. 1. Declare a variable to use in the loop. 2. The loop will continue executing until the condition "i&lt;20" returns false. 3. This part is executed at the end of each loop iteration. It increments i by 1. The ++ operator is a post-increment, which means i will be incremented after each pass through the loop.</p>
+<pre><code>for(int i{};i&lt;20;i++){}</code></pre>
+
+<p>"+=" operator is called compound assignment operator. It performs addition and assignment in one step. The "+=" operator is overloaded to handle characters and strings in the string class. The variable "c" gets added to test after each iteration causing it to accumulate in test.</p>
+<pre><code>test+=c;
+test = test + c; // in expanded form
+</code></pre>
+
+<p>Prints out the string in "test" each iteration.</p>
+<pre><code>std::cout &lt;&lt; test &lt;&lt; "\n";</code></pre>
+
+<p>Zero is returned to indicate successful run of the main function.</p>
+<pre><code>return 0;</code></pre>
+
+    </div>
+</div>
+
+
+
+<p>Do while:</p>
+<pre class="code-block"><img id="cpp_dowhile_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cpp_dowhile_code">// c++ do while loop example
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main(){
+    std::string test{};
+    char c{'f'};
+    int count{};
+    
+    // the main difference between do while and while loop is that the condition is checked after the code has been executed so the code will always execute once no matter the condition
+    do{
+        test+=c;
+        std::cout &lt;&lt; count &lt;&lt; ". "&lt;&lt; test &lt;&lt; "\n";
+        count++;
+    }while(test.size()&lt;20);
+
+    return 0;
+
+    // outputs:
+    /*  0. f
+        1. ff
+        2. fff
+        3. ffff
+        4. fffff
+        5. ffffff
+        6. fffffff
+        7. ffffffff
+        8. fffffffff
+        9. ffffffffff
+        10. fffffffffff
+        11. ffffffffffff
+        12. fffffffffffff
+        13. ffffffffffffff
+        14. fffffffffffffff
+        15. ffffffffffffffff
+        16. fffffffffffffffff
+        17. ffffffffffffffffff
+        18. fffffffffffffffffff
+        19. ffffffffffffffffffff
+    */
+}</code></pre>
+<input type="checkbox" class="toggle" id="explain_cpp_whileloop">
+<label for="explain_cpp_whileloop" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Pre-processor directive that copies the entire contents of "iostream.h" file and pastes it on the same line. "iostream.h" contains definitions for "std::cout" and "std::endl".</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>Contains definitions for the string class. ".size()" method is defined their.</p>
+<pre><code>#include &lt;string&gt;</code></pre>
+
+<p>The main function or main entry point of the application.</p>
+<pre><code>int main()</code></pre>
+
+<p>Declares a string variable "test" and initializes it to a blank string.</p>
+<pre><code>std::string test{};</code></pre>
+
+<p>Declares a variable "c" of the type "char" and assigns it the value "f".</p>
+<pre><code>char c{'f'};</code></pre>
+
+<p>Declares a variable "count" of the type "int" and initializes it to default of "0". This variable will be used as a counter, each time the loop executes "count" will increase by 1.</p>
+<pre><code>int count{};</code></pre>
+
+<p>Code that is executed for each loop iteration.</p>
+<pre><code>do{}</code></pre>
+
+<p>"+=" operator is called compound assignment operator. It performs addition and assignment in one step. The "+=" operator is overloaded to handle characters and strings in the string class. The variable "c" gets added to test after each iteration causing it to accumulate in test.</p>
+<pre><code>test+=c;
+test = test + c; // in expanded form
+</code></pre>
+
+<p>Prints the variable "count" and "test" to the console.</p>
+<pre><code>std::cout &lt;&lt; count &lt;&lt; ". "&lt;&lt; test &lt;&lt; "\n";</code></pre>
+
+<p>Increments the variable "count" by 1. "++" is an operator that increments a variable by 1.</p>
+<pre><code>count++;
+count = count + 1; // in expanded form
+</code></pre>
+
+<p>"do while" loop with a condition. The loop continues executing while the condition "test.size()" is less than 20. ".size()" is a method of the string class that returns the length of the string. "&lt;" is an operator that compares two values, whether the value on the left side is less than the value on the right side and returns a boolean.</p>
+<pre><code>while(test.size()&lt;20){}</code></pre>
+
+<p>Zero is returned to indicate successful run of the main function.</p>
+<pre><code>return 0;</code></pre>
+
+    </div>
+</div>
+
+
+<h4>Task 4.4</h4>
+<p>Your task is to implement the C++ while loop example in C#.</p>
+
+<h3>Arrays</h3>
+<p>An array is a collection of the same data type in a contiguous block of memory. Its similar to a stack of envelope's with mail addresses. The address says where the envelope will be once mailed. The array is like an envelope organizer/holder, the data is the letter inside the envelope, and the address is the memory location.</p>
+
+<p>Character arrays:</p>
+<pre class="code-block"><img id="cpp_arrays_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="cpp_array_code">// c++ arrays example program
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main(){
+    std::string test{"Hello World!"}; // this is an array of chars also called a string
+    
+    // in arrays we start counting at 0 
+    // begining at index 0 would be the character 'H'
+    // we access each character by looping through the string and calling text.at(i) function
+    // test is an object of the string class, we will cover classes soon
+    for(size_t i{};i&lt;test.size();i++){
+        std::cout &lt;&lt; "at index: " &lt;&lt; i &lt;&lt; " | character: " &lt;&lt; test.at(i) &lt;&lt; "\n";
+    }
+
+    return 0;
+}
+
+// outputs:
+/*
+
+at index: 0 | character: H
+at index: 1 | character: e
+at index: 2 | character: l
+at index: 3 | character: l
+at index: 4 | character: o
+at index: 5 | character:  
+at index: 6 | character: W
+at index: 7 | character: o
+at index: 8 | character: r
+at index: 9 | character: l
+at index: 10 | character: d
+at index: 11 | character: !
+
+*/
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_cpp_array">
+<label for="explain_cpp_array" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Pre-processor directive that copies the entire contents of "iostream.h" file and pastes it on the same line. "iostream.h" contains definitions for "std::cout" and "std::endl".</p>
+<pre><code>#include &lt;iostream&gt;</code></pre>
+
+<p>Contains definitions for the string class. ".size()" method is defined their.</p>
+<pre><code>#include &lt;string&gt;</code></pre>
+
+<p>The main function or main entry point of the application.</p>
+<pre><code>int main()</code></pre>
+
+<p>Declares a string variable "test" and initializes it to "Hello World!".</p>
+<pre><code>std::string test{"Hello World!"};</code></pre>
+
+<p>A variable "i" of the type "size_t" is used. The condition checks if "i" is under the length of "test" and if it is continues to execute. "i" is incremented each loop iteration. </p>
+<pre><code>for(size_t i{};i&lt;test.size();i++){}</code></pre>
+
+<p>Prints the index(i) and the corresponding character at that index to the console. The ".at()" function is used which is part of the string class.</p>
+<pre><code>std::cout &lt;&lt; "at index: " &lt;&lt; i &lt;&lt; " | character: " &lt;&lt; test.at(i) &lt;&lt; "\n";</code></pre>
+
+<p>Zero is returned to indicate successful run of the main function.</p>
+<pre><code>return 0;</code></pre>
+
+    </div>
+</div>
+
+
+<p>Integer arrays:</p>
+<pre class="code-block"><img id="js_array_cpybtn" src="images/copy_icon.png" alt="copy icon" class="copy_button"><code id="js_array">// Javascript integer arrays example program
+// decalre an array and fill it with values
+let int_array = [1,2,3,4,5];
+
+// function to print the contents of int_array
+function print_array(){
+    for(let i=0;i&lt;int_array.length;i++){
+        console.log(int_array[i]);
+    }
+}    
+
+// call the function
+print_array();
+
+// outputs: 
+// 1
+// 2
+// 3
+// 4
+// 5
+</code></pre>
+<input type="checkbox" class="toggle" id="explain_js_array">
+<label for="explain_js_array" class="arrow">Explain Code</label>
+<div class="text">
+    <div class="code-explained">
+<p>Using an array literal, an array is declared having 5 values. "let" is how variables are declared in javascript, and it's type is in inferred. </p>
+<pre><code>let int_array = [1,2,3,4,5];</code></pre>
+
+<p>The function to print the contents of "int_array". Functions in javascript must be declared with the keyword "function". The return type is implicit.</p>
+<pre><code>function print_array(){}</code></pre>
+
+<p>Standard for loop. ".length" is a method that returns the size of the array.</p>
+<pre><code>for(let i=0;i&lt;int_array.length;i++){}</code></pre>
+
+<p>Prints each value in "int_array" at an index "i". Using the "[]" operator we can access the elements in the array.</p>
+<pre><code>console.log(int_array[i]);</code></pre>
+
+<p>The function needs to be called in the script in order to work.</p>
+<pre><code>print_array();</code></pre>
+
+    </div>
+</div>
+
+
+<h4>Task 4.5</h4>
+<p>Your task is to write a program in C++ that prompts the user to input some integer values into an array. You will need to handle invalid inputs from the user. Then when the user is finished inputing any values, print the values to the console.</p> 
+
+
+<h2 id="s5">Step 5: Continue in a specific language</h2>
+<p>The tutorial branches off into four languages C++, C#, Java, and Javacript. Continue the tutorial in the language you find most comfortable.</p>
+
+
+<nav>
+    <a href="pages/cpp/cpp.html">C++</a>
+    <a href="#">C#</a>
+    <a href="#">Java</a>
+    <a href="#">Javascript</a>
+</nav>
+
+
+
+
+
+
+
+<footer>
+    <p>&copy; 2023 Scratchcode</p>
+</footer>
+
+
+<!-- End of main_body -->
+</body>
+
+
+<!-- Load scripts -->
+
+<!-- Load syntax highlighting script -->
+<script src="../../highlight/highlight.min.js"></script>
+
+<!-- highlight all <pre><code> tags -->
+<script>hljs.highlightAll();</script>
+
+<!-- Load Button class script-->
+<script src="../../scripts/classes/button.js"></script>
+
+<!-- Load TextTyping script -->
+<script src="../../scripts/classes/TextTyping.js"></script>
+
+<!-- Load coding main page script -->
+<script src="scripts/coding_main.js"></script>
+
+</html>
