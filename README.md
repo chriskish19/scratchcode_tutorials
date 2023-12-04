@@ -7,7 +7,7 @@ Main goal of the tutorials is to use minimal libraries and implement everything 
 I am no expert on webdev, I learn on the go and then try to teach what I learn. 
 
 # FAQ
-Q: When will the website be finished?
-A: A couple years from now. Depends how often I work on it. Could be sooner.
+### Q: When will the website be finished?
+### A: A couple years from now. Depends how often I work on it. Could be sooner.
 
 
