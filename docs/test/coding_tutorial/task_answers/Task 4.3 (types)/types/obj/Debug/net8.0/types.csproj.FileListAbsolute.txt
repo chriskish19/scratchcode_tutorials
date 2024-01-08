@@ -1,0 +1,14 @@
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\bin\Debug\net8.0\types.exe
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\bin\Debug\net8.0\types.deps.json
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\bin\Debug\net8.0\types.runtimeconfig.json
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\bin\Debug\net8.0\types.dll
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\bin\Debug\net8.0\types.pdb
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\types.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\types.AssemblyInfoInputs.cache
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\types.AssemblyInfo.cs
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\types.csproj.CoreCompileInputs.cache
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\types.dll
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\refint\types.dll
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\types.pdb
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\types.genruntimeconfig.cache
+C:\Users\chris\OneDrive\Programming\web_dev_test\coding_tutorial\task_answers\Task 4.3 (types)\types\obj\Debug\net8.0\ref\types.dll
